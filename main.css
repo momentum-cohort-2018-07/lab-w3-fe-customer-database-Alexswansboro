@@ -1,0 +1,54 @@
+
+
+
+
+*{
+    box-sizing:boder-box;
+    margin:0;
+    padding:0;
+    }
+    html{
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+div {
+    display:inline-block;
+    padding: 0 0 20px 0; 
+    
+}
+.customers {
+    display:block;
+    width:45%;
+    height:300px;
+}
+h2{
+    text-align: center;
+    margin:20px 0px;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height:150px;
+    padding-bottom: 2rem;
+    border-radius: 25% 50% 25% 50%;
+}
+
+.address, .email, .dob, .start_date{
+    width: 75%;
+    display: block;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0px 0px 20px 0px;
+}
+.start_date{
+    padding:0px 0px 0px 0px;
+}
+.dob{
+    padding:0px 0px 0px 0px;
+}
+.email{
+    color:grey;
+}

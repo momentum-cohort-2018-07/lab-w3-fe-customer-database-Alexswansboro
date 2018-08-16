@@ -35,7 +35,10 @@ function toTitleCase (str) {
         return moment(this.info.registered).format('MMM Do, YYYY')
     }
     getLocation (){
-        return toTitleCase(this.info.location.street) + ','  + ' ' + toTitleCase(this.info.location.city)  + ' ' + toTitleCase(this.info.location.state) + ',' + ' ' + this.info.location.postcode
+        return toTitleCase(this.info.location.street) + ',' + ' ' + toTitleCase(this.info.location.city) + '\n' + toTitleCase(this.info.location.state) + ',' + ' ' + this.info.location.postcode
+    }
+    getemail(){
+        return this.info.email
     }
     
   
@@ -46,28 +49,40 @@ function toTitleCase (str) {
       let nameH2 = document.createElement('h2')
       nameH2.innerText = this.getName()
 
+      let email = document.createElement('div')
+      email.classList.add('email')
+      email.innerHTML = this.getemail()
+
       let thumbnail = document.createElement('img')
       thumbnail.classList.add('thumbnail')
       thumbnail.src = this.getthumbnail()
 
       let dob = document.createElement('div')
       dob.classList.add('dob')
-      dob.innerHTML = this.getDOB()
+      dob.innerHTML = 'Bithday ' + this.getDOB()
 
       let startDate = document.createElement('div')
-      startDate.classList.add('dob')
-      startDate.innerHTML = this.getStartDate()
+      startDate.classList.add('start_date')
+      startDate.innerHTML = 'Start Date ' + this.getStartDate()
 
       let location = document.createElement('div')
       location.classList.add('address')
       location.innerHTML = this.getLocation()
 
-  
+      let header = document.createElement('div')
+      header.classList.add('h1')
+      header.innerHTML = 'Staff information'
+
+
+
+      
       customerDiv.appendChild(nameH2)
       customerDiv.appendChild(thumbnail)
+      customerDiv.appendChild(email)
+      customerDiv.appendChild(location)
       customerDiv.appendChild(dob) 
       customerDiv.appendChild(startDate)
-      customerDiv.appendChild(location)
+      
   
       return customerDiv
     }
